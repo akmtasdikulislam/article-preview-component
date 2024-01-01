@@ -116,6 +116,10 @@ p {
     color: var(--grayish-blue);
 }
 
+.share {
+    position: relative;
+}
+
 .share-button {
     width           : 3em;
     height          : 3em;
@@ -132,6 +136,45 @@ p {
     width     : 45%;
     object-fit: contain;
 }
+
+.share-tooltip {
+    display         : flex;
+    background-color: var(--dark-grayish-blue);
+    width           : max-content;
+    align-items     : center;
+    gap             : 1em;
+    padding         : 1em 2em;
+    position        : absolute;
+    border-radius   : .5em;
+    top             : -3.75em;
+    left            : 45%;
+    transform       : translate(-50%, -50%);
+    box-shadow      : rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.share-tooltip::before {
+    content         : "";
+    background-color: red;
+    width           : 1.35em;
+    height          : 1.35em;
+    position        : absolute;
+    bottom          : -1.1em;
+    left            : 50%;
+    transform       : rotate(45deg) translateX(-50%);
+    background-color: var(--dark-grayish-blue);
+}
+
+.share-tooltip p {
+    color         : var(--grayish-blue);
+    letter-spacing: .5em;
+    font-size     : .9em;
+}
+
+.share-button:hover {
+    cursor: pointer;
+}
+
 
 .attribution {
     font-size : 11px;
