@@ -1,17 +1,144 @@
 /* Colors */
 :root {
-    --dark-blue         : hsl(214, 17%, 95%);
+    --dark-blue         : hsl(214, 17%, 51%);
     --dark-grayish-blue : hsl(217, 19%, 35%);
     --grayish-blue      : hsl(212, 23%, 69%);
     --light-grayish-blue: hsl(210, 46%, 95%);
+
+    font-size: 13px;
 }
 
+*,
+::before,
+::after {
+    box-sizing : border-box;
+    font-family: "Manrope", serif;
+    margin     : 0;
+    padding    : 0;
+}
+
+body {
+    align-items     : center;
+    background-color: var(--light-grayish-blue);
+    display         : flex;
+    flex-direction  : column;
+    gap             : 2em;
+    height          : 100vh;
+    justify-content : center;
+    width           : 100vw;
+}
+
+.card {
+    background-color: white;
+    height          : 25em;
+    width           : 75em;
+    display         : flex;
+    align-items     : center;
+    border-radius   : 1em;
+    box-shadow      : rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.card-image {
+    aspect-ratio : 1/1;
+    border-radius: 1em 0 0 1em;
+    overflow     : hidden;
+    width        : 25em;
+}
+
+.card-image img {
+    aspect-ratio: 1/1;
+    object-fit  : cover;
+    width       : 100%;
+}
+
+.card-body {
+    padding        : 4em;
+    width          : calc(100% - 25em);
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    gap            : 1em;
+}
+
+p {
+    color      : var(--dark-blue);
+    font-size  : 1.1em;
+    line-height: 1.5em
+}
+
+.card-title {
+    font-size  : 1.75em;
+    color      : var(--dark-grayish-blue);
+    font-weight: 700;
+}
+
+.card-footer {
+    align-items    : center;
+    display        : flex;
+    width          : 100%;
+    justify-content: space-between;
+}
+
+.author {
+    align-items: center;
+    display    : flex;
+    gap        : 1.5em;
+    height     : 3.75em;
+}
+
+.author-photo {
+    aspect-ratio : 1/1;
+    border-radius: 50%;
+    overflow     : hidden;
+    width        : 3.75em;
+}
+
+.author-photo img {
+    height    : 100%;
+    object-fit: cover;
+    width     : 100%;
+}
+
+.author-info {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+}
+
+.author-name {
+    color      : var(--dark-grayish-blue);
+    font-weight: 700;
+}
+
+.date {
+    color: var(--grayish-blue);
+}
+
+.share-button {
+    width           : 3em;
+    height          : 3em;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background-color: var(--light-grayish-blue);
+    border-radius   : 50%;
+}
+
+
+.share-button img {
+    height    : 45%;
+    width     : 45%;
+    object-fit: contain;
+}
 
 .attribution {
     font-size : 11px;
     text-align: center;
+    color     : var(--dark-grayish-blue);
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--grayish-blue);
 }
