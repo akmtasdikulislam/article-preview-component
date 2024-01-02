@@ -23,9 +23,9 @@ body {
     display         : flex;
     flex-direction  : column;
     gap             : 2em;
-    height          : 100vh;
+    min-height      : 100vh;
     justify-content : center;
-    width           : 100vw;
+    min-width       : 100vw;
 }
 
 .card {
@@ -204,4 +204,28 @@ p {
     position        : absolute;
     top             : 0;
     width           : 100%;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex-direction: column;
+        width         : 25em;
+        height        : 45em;
+    }
+
+    .card-image {
+        border-radius: 1em 1em 0 0;
+    }
+
+    .card-body {
+        padding: 2.25em;
+        width  : 100%;
+        height : calc(100% - 15em);
+        gap    : 1.75em;
+    }
+
+    .card-title {
+        font-size    : 1.25em;
+        margin-bottom: -.5em;
+    }
 }
