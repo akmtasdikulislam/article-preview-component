@@ -121,58 +121,67 @@ p {
 }
 
 .share-button {
-    width           : 3em;
-    height          : 3em;
-    display         : flex;
     align-items     : center;
-    justify-content : center;
     background-color: var(--light-grayish-blue);
     border-radius   : 50%;
+    display         : flex;
+    height          : 3em;
+    justify-content : center;
+    transition      : all ease-in-out .25s;
+    width           : 3em;
 }
-
 
 .share-button img {
     height    : 45%;
-    width     : 45%;
     object-fit: contain;
+    width     : 45%;
 }
 
 .share-tooltip {
-    display         : flex;
-    background-color: var(--dark-grayish-blue);
-    width           : max-content;
     align-items     : center;
+    background-color: var(--dark-grayish-blue);
+    border-radius   : .5em;
+    box-shadow      : rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    display         : flex;
     gap             : 1em;
+    left            : 45%;
+    opacity         : 0;
     padding         : 1em 2em;
     position        : absolute;
-    border-radius   : .5em;
     top             : -3.75em;
-    left            : 45%;
     transform       : translate(-50%, -50%);
-    box-shadow      : rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    transition      : all ease-in-out .3s;
+    width           : max-content;
+    z-index         : 9;
 }
 
 .share-tooltip::before {
-    content         : "";
     background-color: red;
-    width           : 1.35em;
-    height          : 1.35em;
-    position        : absolute;
-    bottom          : -1.1em;
-    left            : 50%;
-    transform       : rotate(45deg) translateX(-50%);
     background-color: var(--dark-grayish-blue);
+    bottom          : -1.1em;
+    content         : "";
+    height          : 1.35em;
+    left            : 50%;
+    position        : absolute;
+    transform       : rotate(45deg) translateX(-50%);
+    width           : 1.35em;
 }
 
 .share-tooltip p {
     color         : var(--grayish-blue);
-    letter-spacing: .5em;
     font-size     : .9em;
+    letter-spacing: .5em;
+}
+
+.share-tooltip .icon:hover {
+    cursor    : pointer;
+    filter    : hue-rotate(210deg) brightness(85%) saturate(17%);
+    transition: all ease-in-out .25s;
 }
 
 .share-button:hover {
-    cursor: pointer;
+    background-color: hsl(210, 46%, 85%);
+    cursor          : pointer;
 }
 
 
@@ -184,4 +193,15 @@ p {
 
 .attribution a {
     color: var(--grayish-blue);
+}
+
+#invisible-overlay {
+    background-color: crimson;
+    display         : none;
+    height          : 100%;
+    left            : 0;
+    opacity         : 0%;
+    position        : absolute;
+    top             : 0;
+    width           : 100%;
 }
