@@ -23,9 +23,9 @@ body {
     display         : flex;
     flex-direction  : column;
     gap             : 2em;
-    min-height      : 100vh;
+    height          : 100vh;
     justify-content : center;
-    min-width       : 100vw;
+    width           : 100vw;
 }
 
 .card {
@@ -79,6 +79,7 @@ p {
     display        : flex;
     width          : 100%;
     justify-content: space-between;
+    height         : 3.753em;
 }
 
 .author {
@@ -206,7 +207,7 @@ p {
     width           : 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 375px) {
     .card {
         flex-direction: column;
         width         : 25em;
@@ -227,5 +228,33 @@ p {
     .card-title {
         font-size    : 1.25em;
         margin-bottom: -.5em;
+    }
+
+    .card-footer {
+        padding: relative;
+    }
+
+    .share-button {
+        position  : absolute;
+        right     : .25em;
+        top       : 50%;
+        transform : translateY(-50%);
+        z-index   : 99;
+        transition: all ease-in-out 0.1s;
+    }
+
+    .share-tooltip {
+        display      : flex;
+        opacity      : 0;
+        height       : 6em;
+        top          : 1.25em;
+        left         : -10.25em;
+        width        : 25em;
+        border-radius: 0 0 .5em .5em;
+        z-index      : 9;
+    }
+
+    .share-tooltip::before {
+        display: none;
     }
 }

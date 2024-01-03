@@ -88,11 +88,19 @@
     const invisibleOverlay = document.getElementById("invisible-overlay");
 
     // Attaching a click eventListener to shareButton. When clicked, it will trigger the callback fucntion, which will add necessary style rules to make the ToolTip visible & also it will add a invisible layer over all the elements except the tooltip which has an click eventListener to reset/remove all the modified style rules (by removing the style attribute from targeted Elements becasue all the modifications are implemented by attaching a style attribute to that element.).
+
     shareButton.addEventListener("click", () => {
       invisibleOverlay.style.display = "block";
-      shareButton.style.backgroundColor = "var(--dark-grayish-blue)";
-      shareButtonIcon.style.filter = "brightness(1000%)";
-      shareToolTip.style.opacity = "1";
+      if (window.innerWidth == "375") {
+        shareButton.style.backgroundColor = "var(--dark-blue)";
+        shareButton.style.transform = "translateY(-10%)";
+        shareButtonIcon.style.filter = "brightness(1000%)";
+        shareToolTip.style.opacity = "1";
+      } else {
+        shareButton.style.backgroundColor = "var(--dark-grayish-blue)";
+        shareButtonIcon.style.filter = "brightness(1000%)";
+        shareToolTip.style.opacity = "1";
+      }
       invisibleOverlay.addEventListener("click", () => {
         invisibleOverlay.removeAttribute("style");
         shareButton.removeAttribute("style");
