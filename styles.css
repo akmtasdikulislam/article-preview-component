@@ -237,7 +237,6 @@ p {
     .share-button {
         position  : absolute;
         right     : .25em;
-        top       : 50%;
         transform : translateY(-50%);
         z-index   : 99;
         transition: all ease-in-out 0.1s;
@@ -252,6 +251,12 @@ p {
         width        : 25em;
         border-radius: 0 0 .5em .5em;
         z-index      : 9;
+    }
+
+    .share-button.active {
+        background-color: var(--dark-blue);
+        transform       : translateY(-10%);
+        opacity         : 1;
     }
 
     .share-tooltip::before {

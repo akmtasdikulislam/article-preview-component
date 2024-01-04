@@ -76,7 +76,10 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/akmtasdikulislam"
+        >Akm Tasdikul Islam</a
+      >.
     </div>
     <div id="invisible-overlay"></div>
   </body>
@@ -92,8 +95,7 @@
     shareButton.addEventListener("click", () => {
       invisibleOverlay.style.display = "block";
       if (window.innerWidth == "375") {
-        shareButton.style.backgroundColor = "var(--dark-blue)";
-        shareButton.style.transform = "translateY(-10%)";
+        shareButton.classList.add("active");
         shareButtonIcon.style.filter = "brightness(1000%)";
         shareToolTip.style.opacity = "1";
       } else {
@@ -102,8 +104,12 @@
         shareToolTip.style.opacity = "1";
       }
       invisibleOverlay.addEventListener("click", () => {
+        if (shareButton.classList.contains("active")) {
+          shareButton.classList.remove("active");
+        } else {
+          shareButton.removeAttribute("style");
+        }
         invisibleOverlay.removeAttribute("style");
-        shareButton.removeAttribute("style");
         shareButtonIcon.removeAttribute("style");
         shareToolTip.removeAttribute("style");
         // Also removing eventListener from invisivleOverlay
