@@ -253,12 +253,6 @@ p {
         z-index      : 9;
     }
 
-    .share-button.active {
-        background-color: var(--dark-blue);
-        transform       : translateY(-10%);
-        opacity         : 1;
-    }
-
     .share-tooltip::before {
         display: none;
     }

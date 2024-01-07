@@ -94,21 +94,30 @@
 
     shareButton.addEventListener("click", () => {
       invisibleOverlay.style.display = "block";
-      if (window.innerWidth == "375") {
-        shareButton.classList.add("active");
-        shareButtonIcon.style.filter = "brightness(1000%)";
-        shareToolTip.style.opacity = "1";
+      // if this page is opend on mobile version, on that case, clicking on the share-button, it will trigger share-tooltip differntly than the desktop version. That's why using if else condition to determine in which version of the page is opened by detecting the viewport width.
+      if (window.innerWidth <= "375") {
+        // --Mobile-Version--
+
+        // Step 01: changing shareButton color to distinguish it as active.
+        shareButton.style.backgroundColor = "var(--dark-blue)";
+        // Also pushing it downward to position it vertically center with the shareTooltip
+        shareButton.style.transform = "translateY(-10%)";
       } else {
+        // --Desktop-Version--
+
+        // Step 01: changing shareButton color to distinguish it as active.
         shareButton.style.backgroundColor = "var(--dark-grayish-blue)";
-        shareButtonIcon.style.filter = "brightness(1000%)";
-        shareToolTip.style.opacity = "1";
       }
+
+      // Step 02: also changing shareButton icon color to white. As it is svg icon that's why making it white by incrising its brightness too high through css filter property.
+      shareButtonIcon.style.filter = "brightness(1000%)";
+
+      // Step 03: Finally triggering/showing shareTooltip
+      shareToolTip.style.opacity = "1";
+
+      // When invisibleOverlay is clicked, it will remove all modifications.
       invisibleOverlay.addEventListener("click", () => {
-        if (shareButton.classList.contains("active")) {
-          shareButton.classList.remove("active");
-        } else {
-          shareButton.removeAttribute("style");
-        }
+        shareButton.removeAttribute("style");
         invisibleOverlay.removeAttribute("style");
         shareButtonIcon.removeAttribute("style");
         shareToolTip.removeAttribute("style");
